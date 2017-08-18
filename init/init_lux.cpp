@@ -31,12 +31,10 @@
 #include <stdio.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
-
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
-
+using android::base::GetProperty;
 static void dual_sim(void);
 static void single_sim(void);
 
@@ -55,14 +53,14 @@ void vendor_load_properties()
 {
     bool force_msim = false;
 
-    std::string platform = property_get("ro.board.platform");
+    std::string platform = GetProperty("ro.board.platform","");
     if (platform != ANDROID_TARGET)
         return;
 
-    std::string radio = property_get("ro.boot.radio");
-    std::string sku = property_get("ro.boot.hardware.sku");
-    std::string carrier = property_get("ro.boot.carrier");
-    std::string numsims = property_get("ro.boot.num-sims");
+    std::string radio = GetProperty("ro.boot.radio","");
+    std::string sku = GetProperty("ro.boot.hardware.sku","");
+    std::string carrier = GetProperty("ro.boot.carrier","");
+    std::string numsims = GetProperty("ro.boot.num-sims","");
 
     property_override("ro.product.model", sku.c_str());
 
