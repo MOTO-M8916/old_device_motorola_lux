@@ -35,6 +35,7 @@
 #include "vendor_init.h"
 #include "property_service.h"
 using android::base::GetProperty;
+using android::init::property_set;
 static void dual_sim(void);
 static void single_sim(void);
 
