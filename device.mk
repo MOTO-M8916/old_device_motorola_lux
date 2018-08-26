@@ -26,8 +26,8 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -41,13 +41,13 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
 PRODUCT_COPY_FILES += \
-    device/motorola/lux/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/motorola/lux/configs/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
+    device/motorola/lux/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
+    device/motorola/lux/configs/libnfc-brcm-20795a20.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm-20795a20.conf
 
 PRODUCT_PACKAGES += \
     libnfc \
@@ -75,4 +75,4 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/thermal-engine-lux.conf:system/etc/thermal-engine-lux.conf
+     $(LOCAL_PATH)/configs/thermal-engine-lux.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-lux.conf
