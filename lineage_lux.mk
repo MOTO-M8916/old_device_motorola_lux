@@ -29,6 +29,6 @@ PRODUCT_RELEASE_NAME := lux
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto X Play" \
-    PRIVATE_BUILD_DESC="lux_retca-user 5.1.1 LPD23.118-10 19 release-keys"
+    PRIVATE_BUILD_DESC="lux_retca-user 7.1.1 NPD26.48-24-1 1 release-keys"
 
-BUILD_FINGERPRINT := "motorola/lux_retca/lux:5.1.1/LPD23.118-10/19:user/release-keys"
+BUILD_FINGERPRINT := "motorola/lux_retca/lux:7.1.1/NPD26.48-24-1/1:user/release-keys"
